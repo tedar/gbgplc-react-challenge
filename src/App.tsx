@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Link } from "react-router-dom";
+import Routing from "./Routing";
 
 function App() {
   return (
@@ -11,9 +13,24 @@ function App() {
         <p>
           Follow the steps of the challenge you received.
         </p>
+      
+        <BrowserRouter basename=''>
 
-        <a className='App-link' href='#' onClick={() => alert('Implement me!')}>Scenario 1</a>
-        <a className='App-link' href='#' onClick={() => alert('Implement me!')}>Scenario 2</a>
+          <ul  className='App-list'>
+            <li>
+              <Link className='App-link' to="/">Home</Link>
+            </li>
+            <li>
+              <Link className='App-link' to="/scenario1">Scenario 1</Link>
+            </li>
+            <li>
+              <Link className='App-link' to="/scenario2">Scenario 2</Link>
+            </li>
+          </ul>
+          <hr />
+
+          <Routing/>
+        </BrowserRouter>              
       </header>
     </div>
   );
