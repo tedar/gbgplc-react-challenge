@@ -5,9 +5,10 @@ const Scenario1 = () => {
     return <>
             <p>
                 Scenario 1 page
-            </p>
-            <Parent/>
+            </p>            
+            
             <FunctionComponent/>
+            {<Parent/>}
         </>
 };
 

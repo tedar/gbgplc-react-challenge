@@ -27,7 +27,6 @@ function App() {
               <Link className='App-link' to="/scenario2">Scenario 2</Link>
             </li>
           </ul>
-          <hr />
 
           <Routing/>
         </BrowserRouter>              

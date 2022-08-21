@@ -41,8 +41,8 @@ export class Parent extends React.Component<Props, State> {
   render() {
     return (
       <div style={{ height: '200vh' }}>
-        <div style={{ position: 'fixed' }}>
-          <div>Click count: {this.state.clickCount}</div>
+        <div>
+          <div>Class component. Click count: {this.state.clickCount}</div>
           <Child
             onButtonClicked={this.onButtonClicked}
             label='Click me to increase the counter!'
