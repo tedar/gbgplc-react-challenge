@@ -52,6 +52,14 @@ const Scenario2 = () => {
         setTaskList(newTaskList);
     };
 
+    const handleDeleteOnClick = (index: number) => {
+
+        var newTaskList = [...taskList];
+        newTaskList.splice(index, 1);
+
+        setTaskList(newTaskList);
+    };    
+
     return <>
             <p>
                 Scenario 2 page
@@ -94,7 +102,7 @@ const Scenario2 = () => {
                                         <IconButton aria-label="done" disabled={task.done} color="primary">
                                             <CreateIcon />
                                         </IconButton>                                               
-                                        <IconButton aria-label="delete">
+                                        <IconButton aria-label="delete" onClick={(e) => handleDeleteOnClick(index)} >
                                             <DeleteIcon />
                                         </IconButton>                
                                     </Grid>
