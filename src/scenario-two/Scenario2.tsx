@@ -19,6 +19,7 @@ const Scenario2 = () => {
             {text: "Do a good job", done: false}             
         ]
 
+    const [newToDo, setNewToDo] = useState('') 
     const [taskList, setTaskList] = useState(initialTaskList);
 
     let numPendingTasks = 0;
@@ -30,6 +31,18 @@ const Scenario2 = () => {
             numPendingTasks++;
         }
     }); 
+
+    const handleButtonClick = () => {  
+
+        const newTask: Task = { text: newToDo, done: false}
+
+        setTaskList([
+            ...taskList,
+            newTask
+        ]);
+        
+        console.log(`New To Do added.`);
+      };        
 
     return <>
             <p>
@@ -46,8 +59,12 @@ const Scenario2 = () => {
                     </Grid>
 
                     <Grid item>
-                        <TextField id="outlined-basic" label="Add your new To Do" variant="outlined" />
-                        <Button variant="contained" style={{marginLeft:10, height:55}}>
+                        <TextField 
+                            id="outlined-basic" 
+                            label="Add your new To Do" variant="outlined" 
+                            value={newToDo} 
+                            onChange={(e) => setNewToDo(e.target.value)} />
+                        <Button variant="contained" style={{marginLeft:10, height:55}} onClick={handleButtonClick}>
                             <Typography style={{fontSize:36}}>
                                 +
                             </Typography>
