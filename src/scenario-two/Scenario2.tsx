@@ -60,6 +60,11 @@ const Scenario2 = () => {
         setTaskList(newTaskList);
     };    
 
+    const handleDeleteAllOnClick = () => {
+
+        setTaskList([]);
+    }
+
     return <>
             <p>
                 Scenario 2 page
@@ -117,7 +122,11 @@ const Scenario2 = () => {
                             <Typography>
                                 You have {numPendingTasks} pending tasks
                             </Typography>
-                            <Button variant="outlined" color="warning" style={{marginLeft:10}}>Clear all</Button>
+                            <Button
+                                variant="outlined" color="warning" style={{marginLeft:10}}
+                                onClick={handleDeleteAllOnClick}>
+                                    Clear all
+                            </Button>
                         </Grid>
                     </Grid>
                 </Card>
