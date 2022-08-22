@@ -40,9 +40,17 @@ const Scenario2 = () => {
             ...taskList,
             newTask
         ]);
-        
+
         console.log(`New To Do added.`);
       };        
+
+    const handleDoneCheckboxOnClick = (index: number) => {
+
+        var newTaskList = [...taskList];
+        newTaskList[index].done = !newTaskList[index].done;
+
+        setTaskList(newTaskList);
+    };
 
     return <>
             <p>
@@ -73,12 +81,12 @@ const Scenario2 = () => {
 
                     <Grid item>
                         <Grid container justifyContent="center" >
-                            {taskList.map((task) =>                             
+                            {taskList.map((task, index) =>                             
                                 <Grid container justifyContent="center" >
                                     <Grid item>
                                         <FormControlLabel
                                             value={task.text}
-                                            control={<Checkbox checked={task.done} />}
+                                            control={<Checkbox checked={task.done} onClick={(e) => handleDoneCheckboxOnClick(index)} />}
                                             label={task.text}
                                             labelPlacement="end"
                                             style={{textDecorationLine: task.done? 'line-through' : 'none'}}
